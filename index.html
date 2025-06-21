@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project to Prompt Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Project to Prompt Converter</h1>
+        <p>Select your project folder. The tool will read your source code and generate a single, clean prompt for an AI.</p>
+
+        <div class="card">
+            <h2>1. Select Project Folder</h2>
+            <input type="file" id="folderInput" webkitdirectory directory multiple>
+        </div>
+
+        <div class="card config-card">
+            <div class="config-header">
+                <h2 id="configTitle">2. Configure Ignore Patterns</h2>
+                <button id="modeSwitchBtn" title="Switch Mode">⇄</button>
+            </div>
+            <p id="configDescription">Add file or folder patterns to ignore (one per line). Similar to a <code>.gitignore</code> file.</p>
+            <textarea id="patternsTextarea" rows="15"></textarea>
+        </div>
+
+        <button id="generateBtn">Generate Prompt</button>
+
+        <div class="card output-card">
+            <h2>3. Generated Prompt</h2>
+            <button id="copyBtn">Copy to Clipboard</button>
+            <pre><code id="output">Your generated prompt will appear here...</code></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
